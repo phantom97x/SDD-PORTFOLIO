@@ -1,0 +1,172 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8"> 
+<meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+<title>Contact - Sanskar Dhamdhere | Portfolio</title> 
+<!-- Favicons --> 
+<link href="assets/img/images.png" rel="icon"> 
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+<!-- Google Fonts --> 
+<link 
+href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Rale
+way&display=swap" rel="stylesheet"> 
+ 
+  <!-- Vendor CSS --> 
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+ 
+  <!-- Main CSS --> 
+  <link href="assets/css/main.css" rel="stylesheet"> 
+</head> 
+ 
+<body class="contact-page"> 
+ 
+<!-- ================= HEADER ================= --> 
+<header id="header" class="header sticky-top"> 
+  <div class="container d-flex justify-content-between align-items-center"> 
+    <nav id="navmenu" class="navmenu"> 
+        <ul> 
+          <li><a href="index.html" class="active">Home</a></li> 
+          <li><a href="about.html">About</a></li> 
+          <li><a href="resume.html">Resume</a></li> 
+          <li class="dropdown"> 
+            <a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle
+dropdown"></i></a> 
+            <ul> 
+              <li><a href="#">Basic Port Scanning and Threat Detection</a></li> 
+              <li><a href="#">Basic Firewall Configuration</a></li> 
+              <li><a href="#">Portfolio Website</a></li> 
+            </ul> 
+          </li> 
+          <li><a href="contact.html">Contact</a></li> 
+        </ul> 
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i> 
+      </nav> 
+ 
+    <a href="https://www.linkedin.com/in/sanskar-deepak-dhamdhere-471b75374/overlay/contact-info/"> 
+      <i class="bi bi-linkedin fs-4"></i> 
+    </a> 
+  </div> 
+</header> 
+ 
+<!-- ================= MAIN ================= --> 
+<main class="main"> 
+ 
+<section id="contact" class="contact section"> 
+  <div class="container section-title" data-aos="fade-up"> 
+    <h2>Contact</h2> 
+    <p>Feel free to reach out — I’d love to connect with you.</p> 
+  </div> 
+ 
+  <div class="container" data-aos="fade-up" data-aos-delay="100"> 
+    <div class="row g-5"> 
+ 
+      <!-- Contact Info --> 
+      <div class="col-lg-5"> 
+        <div class="info-box"> 
+          <h3>Contact Info</h3> 
+          <p>Open to opportunities, collaborations, and tech discussions.</p> 
+ 
+          <p><i class="bi bi-geo-alt"></i> Pune, Maharashtra</p> 
+          <p><i class="bi bi-telephone"></i> +91 9699367097 
+          <p><i class="bi bi-telephone"></i> +91 7821922541</p> 
+          <p><i class="bi bi-envelope"></i> bcawithsd@gmail.com</p> 
+        </div> 
+      </div> 
+ 
+      <!-- Contact Form --> 
+      <div class="col-lg-7"> 
+        <div class="contact-form"> 
+          <h3>Get In Touch</h3> 
+ 
+          <form id="contact-form" 
+                action="https://formspree.io/f/mbdzlzon" 
+                method="POST"> 
+ 
+            <div class="row gy-4"> 
+ 
+              <div class="col-md-6"> 
+                <input type="text" name="name" class="form-control" placeholder="Your 
+Name" required> 
+              </div> 
+ 
+              <div class="col-md-6"> 
+                <input type="email" name="email" class="form-control" placeholder="Your 
+Email" required> 
+              </div> 
+ 
+              <div class="col-12"> 
+                <input type="text" name="subject" class="form-control" placeholder="Subject" 
+required> 
+              </div> 
+ 
+              <div class="col-12"> 
+                <textarea name="message" rows="6" class="form-control" 
+placeholder="Message" required></textarea> 
+              </div> 
+ 
+              <!-- Formspree extras --> 
+              <input type="hidden" name="_subject" value="New Contact Message from 
+Portfolio"> 
+              <input type="hidden" name="_captcha" value="false"> 
+              <input type="text" name="_gotcha" style="display:none"> 
+ 
+              <div class="col-12 text-center"> 
+                <div class="loading" style="display:none;">Loading...</div> 
+                <div class="error-message text-danger"></div> 
+                <div class="sent-message text-success" style="display:none;"> 
+                  Your message has been sent. Thank you! 
+                </div> 
+                <button type="submit" class="btn btn-primary mt-3">Send Message</button> 
+              </div> 
+ 
+            </div> 
+          </form> 
+        </div> 
+      </div> 
+ 
+    </div> 
+  </div> 
+</section> 
+ 
+</main> 
+ 
+<!-- ================= FOOTER ================= --> 
+<footer class="footer text-center"> 
+<p>© 2026 <strong>Sanskar Dhamdhere. All Rights Reserved.</p> 
+</footer> 
+<!-- Vendor JS --> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/vendor/aos/aos.js"></script> 
+<script> 
+AOS.init(); 
+</script> 
+<!-- ================= FORMSPREE SCRIPT ================= --> 
+<script> 
+const form = document.getElementById("contact-form"); 
+const loading = document.querySelector(".loading"); 
+const errorMessage = document.querySelector(".error-message"); 
+const sentMessage = document.querySelector(".sent-message"); 
+form.addEventListener("submit", async (e) => { 
+e.preventDefault(); 
+loading.style.display = "block"; 
+errorMessage.innerHTML = ""; 
+sentMessage.style.display = "none"; 
+const response = await fetch(form.action, { 
+method: "POST", 
+body: new FormData(form), 
+headers: { "Accept": "application/json" } 
+}); 
+loading.style.display = "none"; 
+if (response.ok) { 
+sentMessage.style.display = "block"; 
+form.reset(); 
+} else { 
+errorMessage.innerHTML = "  something went wrong. Please try again.";
+} 
+}); 
+</script> 
+</body> 
+</html> 
